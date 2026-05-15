@@ -20,6 +20,8 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 # Create a non-root user and set up the data directory for storing
 # agent outputs and cached market data between container runs.
+# Note: mounting a host volume at /home/appuser/.tradingagents/data is
+# recommended to persist results across container restarts.
 RUN useradd --create-home appuser \
  && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents \
  && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents/data
