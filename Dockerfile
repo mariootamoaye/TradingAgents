@@ -22,9 +22,13 @@ ENV PATH="/opt/venv/bin:$PATH"
 # agent outputs and cached market data between container runs.
 # Note: mounting a host volume at /home/appuser/.tradingagents/data is
 # recommended to persist results across container restarts.
+#
+# Personal note: also creating a logs directory for easier debugging
+# when running experiments locally.
 RUN useradd --create-home appuser \
  && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents \
- && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents/data
+ && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents/data \
+ && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents/logs
 USER appuser
 WORKDIR /home/appuser/app
 
