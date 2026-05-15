@@ -18,8 +18,11 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
+# Create a non-root user and set up the data directory for storing
+# agent outputs and cached market data between container runs.
 RUN useradd --create-home appuser \
- && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents
+ && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents \
+ && install -d -m 0755 -o appuser -g appuser /home/appuser/.tradingagents/data
 USER appuser
 WORKDIR /home/appuser/app
 
