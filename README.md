@@ -28,10 +28,11 @@
 # TradingAgents: Multi-Agents LLM Financial Trading Framework
 
 > **Personal fork** — I'm using this for learning and experimenting with LLM-driven trading strategies. My notes and tweaks are scattered through the codebase; check commits for details.
+>
+> **My setup:** Running locally with Ollama (llama3.1:8b) for most experiments to avoid API costs. For serious backtests I switch to GPT-4o. If you're following along, set `TRADINGAGENTS_LLM_PROVIDER=ollama` and `TRADINGAGENTS_BACKEND_URL=http://localhost:11434`.
 
 ## News
 - [2026-05] **TradingAgents v0.2.5** released with the grounded Sentiment Analyst, GPT-5.5 etc. model coverage, Qwen/GLM/MiniMax dual-region support, `TRADINGAGENTS_*` env-var configurability with API-key auto-detection, remote Ollama support, non-US alpha benchmarks, and ticker path-traversal hardening. See [CHANGELOG.md](CHANGELOG.md) for the full list.
 - [2026-04] **TradingAgents v0.2.4** released with structured-output agents (Research Manager, Trader, Portfolio Manager), LangGraph checkpoint resume, persistent decision log, DeepSeek/Qwen/GLM/Azure provider support, Docker, and a Windows UTF-8 encoding fix.
 - [2026-03] **TradingAgents v0.2.3** released with multi-language support, GPT-5.4 family models, unified model catalog, backtesting date fidelity, and proxy support.
-- [2026-03] **TradingAgents v0.2.2** released with GPT-5.4/Gemini 3.1/Claude 4.6 model coverage, five-tier rating scale, OpenAI Responses API, Anthropic effort control, and cross-platform stability.
-- [2026-02] **TradingAgents v0.2.0** released with multi-provider LLM sup
+- [2026-03] **TradingAgents v0.2.2** released with GPT-5.4/Gemini 3.1/Claude 4.6 mod
